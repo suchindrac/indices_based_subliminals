@@ -1,0 +1,10 @@
+file_name=$1
+
+if [ "${file_name}" == "" ]; then
+    echo "$0 <file name>"
+    exit 1
+fi
+
+rm -f text.txt
+python3 sub_indices.py
+mv text.txt texts/${file_name}

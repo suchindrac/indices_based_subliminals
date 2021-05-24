@@ -1,0 +1,6 @@
+for file in `ls texts`
+do
+    gnuplot -e "filename='texts/${file}'" fplot.p
+    bname=`basename -s .txt $file`
+    mv converted.png images/${bname}.png
+done

@@ -1,0 +1,6 @@
+for file in `ls texts/*txt`
+do
+    python3 wave_creation.py ${file}
+    bname=`basename -s .txt ${file}`
+    cp sound.wav waves/${bname}.wav
+done
