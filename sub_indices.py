@@ -2,6 +2,7 @@ import tkinter as tk
 import sys
 
 trans = {chr(x) : "%02d" % (x - 96) for x in range(97, 97 + 26)}
+trans[' '] = '00'
 
 root = None
 text = None
@@ -34,9 +35,7 @@ def run():
 def key_pressed(event):
     try:
         print(event.keycode)
-        if event.char == " ":
-            text.insert(tk.INSERT, "  ")
-        elif event.char == ".":
+        if event.char == ".":
             text.insert(tk.INSERT, ".")
         else:
             text.insert(tk.INSERT, str(trans[event.char]) + " ")
